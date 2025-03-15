@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\DomainEnvironmentRequest;
 use App\Space\EnvironmentManager;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
 
 class AppDomainController extends Controller
 {
     public function __invoke(DomainEnvironmentRequest $request)
     {
+        Log::info('AppDomainController', $request->all());
         Artisan::call('optimize:clear');
 
         $environmentManager = new EnvironmentManager;

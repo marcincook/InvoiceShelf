@@ -9,6 +9,7 @@ use App\Http\Requests\MailEnvironmentRequest;
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class EnvironmentManager
 {
@@ -415,6 +416,8 @@ class EnvironmentManager
                 'SESSION_DOMAIN' => explode(':', $request->get('app_domain'))[0],
             ]);
         } catch (Exception $e) {
+
+            Log::error('Unable to save domain variable: '.$e->getMessage());
             return [
                 'error' => 'domain_verification_failed',
             ];

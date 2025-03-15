@@ -1,5 +1,5 @@
 <template>
-  <div class="grid h-screen grid-cols-12 overflow-y-hidden bg-gray-100">
+  <div class="grid h-screen grid-cols-12 overflow-y-hidden bg-slate-300">
     <NotificationRoot />
 
     <div
@@ -12,7 +12,8 @@
         col-span-12
         p-4
         mx-auto
-        text-gray-900
+
+        text-gray-200
         md:p-8 md:col-span-6
         lg:col-span-4
         flex-2
@@ -141,7 +142,7 @@ const pageHeading = computed(() => {
     return window.login_page_heading
   }
 
-  return 'Simple Invoicing for Individuals Small Businesses'
+  return 'System faktur'; //'Simple Invoicing for Individuals Small Businesses'
 })
 
 const pageDescription = computed(() => {
@@ -149,14 +150,14 @@ const pageDescription = computed(() => {
     return window.login_page_description
   }
 
-  return 'InvoiceShelf helps you track expenses, record payments & generate beautiful invoices & estimates.'
+  return 'Witamy w systemie wystawiania faktur'; // 'InvoiceShelf helps you track expenses, record payments & generate beautiful invoices & estimates.'
 })
 
 const copyrightText = computed(() => {
   if (window.copyright_text) {
     return window.copyright_text
   }
-  return 'Copyright @ IDEOLOGIX MEDIA DOOEL.'
+  return 'Copyright Ditems.pl'; // 'Copyright @ IDEOLOGIX MEDIA DOOEL.'
 })
 
 const loginPageLogo = computed(() => {
